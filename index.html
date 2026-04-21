@@ -621,6 +621,140 @@ footer {
   .stat-divider { display:none; }
   footer { flex-direction:column; text-align:center; }
   .footer-links { justify-content:center; }
+  .platforms-grid, .pricing-grid { grid-template-columns:1fr !important; }
+}
+
+/* ── PLATFORMS (Web vs iOS) ── */
+.platforms-section {
+  background: var(--navy-mid);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.platforms-grid {
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap:24px;
+}
+.platform-card {
+  background: var(--navy);
+  border: 1px solid var(--border);
+  border-radius:20px;
+  padding:36px;
+  display:flex; flex-direction:column;
+  transition: border-color 0.25s, transform 0.25s;
+}
+.platform-card:hover { transform: translateY(-3px); border-color: rgba(59,130,246,0.3); }
+.platform-card.platform-web {
+  border-color: rgba(59,130,246,0.35);
+  box-shadow: 0 0 40px rgba(37,99,235,0.1) inset;
+}
+.platform-icon { font-size:2rem; margin-bottom:12px; }
+.platform-name {
+  font-family: var(--font-display);
+  font-size:1.6rem; font-weight:700;
+  color: var(--white); margin-bottom:4px;
+}
+.platform-sub {
+  font-size:0.85rem; color: var(--white-dim);
+  text-transform:uppercase; letter-spacing:0.08em;
+  margin-bottom:24px;
+}
+.platform-features {
+  list-style:none; margin:0 0 28px; padding:0;
+  flex:1;
+}
+.platform-features li {
+  position:relative;
+  padding: 8px 0 8px 26px;
+  font-size:0.92rem; color: var(--white);
+  border-bottom: 1px solid var(--border);
+  font-weight:300;
+}
+.platform-features li:last-child { border-bottom:none; }
+.platform-features li::before {
+  content:'✓';
+  position:absolute; left:0; top:8px;
+  color: var(--green);
+  font-weight:700;
+}
+.platform-card .btn-primary,
+.platform-card .btn-secondary {
+  width:100%; justify-content:center;
+}
+
+/* ── PRICING ── */
+.pricing-grid {
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap:24px; margin-top:48px;
+}
+.price-card {
+  background: var(--navy);
+  border: 1px solid var(--border);
+  border-radius:20px;
+  padding:36px;
+  display:flex; flex-direction:column;
+  transition: transform 0.25s, border-color 0.25s;
+}
+.price-card:hover { transform: translateY(-3px); }
+.price-card.price-card-pro {
+  border-color: var(--gold);
+  background: linear-gradient(160deg, var(--navy) 0%, rgba(201,168,76,0.06) 100%);
+  box-shadow: 0 0 50px rgba(201,168,76,0.08);
+}
+.price-tier {
+  font-family: var(--font-display);
+  font-size:1.3rem; font-weight:600;
+  color: var(--white); margin-bottom:12px;
+  display:flex; align-items:center; gap:10px;
+}
+.price-badge {
+  font-family: var(--font-body);
+  font-size:0.65rem; font-weight:500;
+  text-transform:uppercase; letter-spacing:0.08em;
+  background: var(--gold); color: var(--navy);
+  padding: 3px 10px; border-radius:10px;
+}
+.price-amount {
+  font-family: var(--font-display);
+  font-size:2.8rem; font-weight:700;
+  color: var(--white); line-height:1;
+  margin-bottom:6px;
+}
+.price-amount span {
+  font-size:1rem; font-weight:400;
+  color: var(--white-dim);
+  font-family: var(--font-body);
+}
+.price-alt {
+  font-size:0.82rem; color: var(--gold-light);
+  margin-bottom:28px;
+}
+.price-card:not(.price-card-pro) .price-alt {
+  color: var(--white-dim);
+  margin-bottom:28px;
+  min-height:1.2em;
+}
+.price-features {
+  list-style:none; margin:0 0 28px; padding:0;
+  flex:1;
+}
+.price-features li {
+  padding: 8px 0 8px 26px;
+  position:relative;
+  font-size:0.92rem; color: var(--white);
+  border-bottom: 1px solid var(--border);
+  font-weight:300;
+}
+.price-features li:last-child { border-bottom:none; }
+.price-features li::before {
+  content:'✓';
+  position:absolute; left:0; top:8px;
+  color: var(--green);
+  font-weight:700;
+}
+.price-features li strong {
+  color: var(--gold-light); font-weight:600;
 }
 </style>
 </head>
@@ -636,9 +770,10 @@ footer {
     <li><a href="#features">Features</a></li>
     <li><a href="#workflow">Workflow</a></li>
     <li><a href="#scores">Calculators</a></li>
+    <li><a href="#pricing">Pricing</a></li>
     <li><a href="#privacy">Privacy</a></li>
     <li><a href="manual.html">User Manual</a></li>
-      <li><a href="#download" class="nav-cta">Download</a></li>
+    <li><a href="https://admitnote-web.vercel.app" class="nav-cta">Launch Web App →</a></li>
   </ul>
 </nav>
 
@@ -649,7 +784,7 @@ footer {
   <div class="hero-content">
     <div class="hero-badge">
       <span class="hero-badge-dot"></span>
-      Now available on the App Store
+      Now on iOS &amp; the web
     </div>
     <h1>Clinical notes.<br><em>Written by AI.</em><br>Reviewed by you.</h1>
     <p class="hero-sub">
@@ -658,14 +793,19 @@ footer {
       hospital medicine.
     </p>
     <div class="hero-actions">
-      <a href="https://apps.apple.com/app/admitnote/id6762265910" class="btn-primary">
-        <span class="apple-icon">🍎</span>
-        Download on the App Store
+      <a href="https://admitnote-web.vercel.app" class="btn-primary">
+        <span class="apple-icon">🌐</span>
+        Open in your browser
       </a>
-      <a href="#workflow" class="btn-secondary">
-        See how it works →
+      <a href="https://apps.apple.com/app/admitnote/id6762265910" class="btn-secondary">
+        <span class="apple-icon">🍎</span>
+        Download for iOS
       </a>
     </div>
+    <p style="font-size:0.82rem; color:var(--white-dim); margin-top:16px; font-weight:300;">
+      Works on desktop + phone · no install. Prefer native? Grab the iOS app.
+      <a href="#workflow" style="color:var(--blue-bright); text-decoration:none; margin-left:6px;">See how it works →</a>
+    </p>
     <div class="hero-stats">
       <div class="stat">
         <div class="stat-n"><span>18</span></div>
@@ -723,6 +863,52 @@ footer {
         <div class="step-num"><span class="step-icon">📤</span></div>
         <div class="step-title">Export</div>
         <div class="step-desc">Email or share directly to your EHR</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORMS -->
+<section class="platforms-section" id="platforms">
+  <div class="container">
+    <div class="reveal" style="text-align:center; margin-bottom:48px;">
+      <div class="section-label">// Two ways to use it</div>
+      <h2 class="section-title">Bedside, workstation,<br>anywhere in between.</h2>
+      <p class="section-sub" style="margin:0 auto;">
+        Same clinical AI. Same privacy guarantee. Pick the platform that fits your workflow — or use both.
+      </p>
+    </div>
+    <div class="platforms-grid reveal">
+      <div class="platform-card platform-web">
+        <div class="platform-icon">🌐</div>
+        <div class="platform-name">Web app</div>
+        <div class="platform-sub">Desktop + phone browser</div>
+        <ul class="platform-features">
+          <li>Magic-link sign-in — no password to remember</li>
+          <li>Cross-device handoff via QR or 6-digit code</li>
+          <li>Works on hospital PCs (no camera needed)</li>
+          <li>Free 10 notes/month · Pro is unlimited</li>
+          <li>Every feature, no install, works everywhere</li>
+        </ul>
+        <a href="https://admitnote-web.vercel.app" class="btn-primary">
+          Launch in your browser →
+        </a>
+      </div>
+      <div class="platform-card platform-ios">
+        <div class="platform-icon">🍎</div>
+        <div class="platform-name">iOS app</div>
+        <div class="platform-sub">Native iPhone &amp; iPad</div>
+        <ul class="platform-features">
+          <li>Native speed at the bedside</li>
+          <li>Bring your own Anthropic + OpenAI keys</li>
+          <li>Free forever, no subscription</li>
+          <li>Home-screen app, Siri-friendly</li>
+          <li>Same clinical scores &amp; AI structuring</li>
+        </ul>
+        <a href="https://apps.apple.com/app/admitnote/id6762265910" class="btn-secondary">
+          <span class="apple-icon">🍎</span>
+          Download on the App Store →
+        </a>
       </div>
     </div>
   </div>
@@ -855,6 +1041,47 @@ footer {
   </div>
 </section>
 
+<!-- PRICING (Web app) -->
+<section id="pricing" class="platforms-section">
+  <div class="container">
+    <div class="reveal" style="text-align:center; margin-bottom:48px;">
+      <div class="section-label">// Pricing — web app</div>
+      <h2 class="section-title">Simple. Transparent.</h2>
+      <p class="section-sub" style="margin:0 auto;">
+        The web app has a free tier and a Pro tier. The iOS app is always free — you bring your own API keys.
+      </p>
+    </div>
+    <div class="pricing-grid reveal">
+      <div class="price-card">
+        <div class="price-tier">Free</div>
+        <div class="price-amount">$0 <span>/ month</span></div>
+        <div class="price-alt">No credit card required</div>
+        <ul class="price-features">
+          <li>10 AI-structured notes per month</li>
+          <li>Cross-device handoff (QR + 6-digit code)</li>
+          <li>All clinical calculators</li>
+          <li>HIPAA Safe Harbor de-identification</li>
+          <li>Zero patient notes stored on our servers</li>
+        </ul>
+        <a href="https://admitnote-web.vercel.app" class="btn-secondary" style="width:100%; justify-content:center;">Start free →</a>
+      </div>
+      <div class="price-card price-card-pro">
+        <div class="price-tier">Pro <span class="price-badge">Most popular</span></div>
+        <div class="price-amount">$29 <span>/ month</span></div>
+        <div class="price-alt">or $249/year — save $99</div>
+        <ul class="price-features">
+          <li><strong>Unlimited</strong> AI-structured notes</li>
+          <li>Everything in Free</li>
+          <li>Priority email support</li>
+          <li>Cancel anytime — self-serve portal</li>
+          <li>Still zero patient notes on our servers</li>
+        </ul>
+        <a href="https://admitnote-web.vercel.app/upgrade" class="btn-primary" style="width:100%; justify-content:center;">Upgrade to Pro →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- PRIVACY -->
 <section id="privacy">
   <div class="container">
@@ -875,7 +1102,7 @@ footer {
         <div class="privacy-check">✓</div>
         <div>
           <div class="privacy-title">On-device storage only</div>
-          <div class="privacy-desc">All notes stored locally using iOS encrypted storage. No cloud sync, no external database, no server-side PHI.</div>
+          <div class="privacy-desc">iOS: encrypted local storage. Web: browser IndexedDB. No cloud sync, no external database, no server-side PHI on either platform.</div>
         </div>
       </div>
       <div class="privacy-item">
@@ -902,8 +1129,15 @@ footer {
       <div class="privacy-item">
         <div class="privacy-check">✓</div>
         <div>
-          <div class="privacy-title">No account required</div>
-          <div class="privacy-desc">No login, no account creation, no personal information collected. The app opens directly to your notes list.</div>
+          <div class="privacy-title">Minimal account footprint</div>
+          <div class="privacy-desc">iOS: no account at all. Web: only email + subscription state — never patient content. No personal info beyond your sign-in email is stored.</div>
+        </div>
+      </div>
+      <div class="privacy-item">
+        <div class="privacy-check">✓</div>
+        <div>
+          <div class="privacy-title">E2E-encrypted handoff (web)</div>
+          <div class="privacy-desc">Cross-device handoff uses AES-256-GCM + ECDH. Our server only sees opaque ciphertext for up to 15 minutes — encryption keys never reach us.</div>
         </div>
       </div>
     </div>
@@ -1073,14 +1307,20 @@ footer {
   <div class="container reveal">
     <div class="cta-box">
       <h2>Start documenting<br>smarter today.</h2>
-      <p>AdmitNote is available now on the App Store.<br>Free to try — no account required.</p>
-      <a href="https://apps.apple.com/app/admitnote/id6762265910" class="app-store-btn">
-        <span style="font-size:2rem;">🍎</span>
-        <div class="app-store-btn-text">
-          <span class="app-store-btn-small">Download on the</span>
-          <span class="app-store-btn-large">App Store</span>
-        </div>
-      </a>
+      <p>AdmitNote is available now on iOS and on the web.<br>Free to try — pick whichever fits your workflow.</p>
+      <div style="display:flex; gap:16px; flex-wrap:wrap; justify-content:center; margin-top:8px;">
+        <a href="https://admitnote-web.vercel.app" class="btn-primary" style="padding:16px 32px; font-size:1rem;">
+          <span class="apple-icon">🌐</span>
+          Launch the web app →
+        </a>
+        <a href="https://apps.apple.com/app/admitnote/id6762265910" class="app-store-btn">
+          <span style="font-size:2rem;">🍎</span>
+          <div class="app-store-btn-text">
+            <span class="app-store-btn-small">Download on the</span>
+            <span class="app-store-btn-large">App Store</span>
+          </div>
+        </a>
+      </div>
     </div>
   </div>
 </section>
