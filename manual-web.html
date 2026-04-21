@@ -54,6 +54,14 @@ nav {
   font-family: var(--font-display);
   font-size:1.15rem; font-weight:600;
   color: var(--white); text-decoration:none;
+  display:flex; align-items:center; gap:10px;
+}
+.nav-logo-icon {
+  width:32px; height:32px;
+  background: linear-gradient(135deg, var(--blue), #1D4ED8);
+  border-radius:8px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:16px;
 }
 .nav-links { display:flex; gap:4px; list-style:none; flex-wrap:wrap; justify-content:flex-end; }
 .nav-links a {
@@ -341,7 +349,10 @@ footer a { color: var(--blue-bright); text-decoration:none; }
 
 <!-- NAV -->
 <nav>
-  <a href="index.html" class="nav-logo">📋 AdmitNote</a>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon">📋</div>
+    AdmitNote
+  </a>
   <ul class="nav-links">
     <li><a href="#signin">Sign-in</a></li>
     <li><a href="#note">Notes</a></li>
