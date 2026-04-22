@@ -346,6 +346,73 @@ footer a { color: var(--blue-bright); text-decoration:none; }
   .manual-phone { width: 160px; }
 }
 
+/* ── Lightbox (click-to-enlarge screenshots) ─────────────────── */
+.lightbox-trigger { cursor: zoom-in; transition: opacity 0.2s; }
+.lightbox-trigger:hover { opacity: 0.85; }
+
+.lightbox {
+  position: fixed; inset: 0; z-index: 10000;
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: none;
+  align-items: center; justify-content: center;
+  padding: 40px 20px;
+  cursor: zoom-out;
+  animation: lightbox-fade 0.2s ease;
+}
+.lightbox.is-open { display: flex; }
+.lightbox img {
+  max-width: 100%;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  border-radius: 24px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9);
+  animation: lightbox-zoom 0.28s cubic-bezier(0.2, 0.9, 0.3, 1.1);
+  cursor: zoom-out;
+}
+.lightbox-close {
+  position: absolute;
+  top: 20px; right: 24px;
+  width: 44px; height: 44px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 50%;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.15s, transform 0.15s;
+  font-family: var(--font-body);
+}
+.lightbox-close:hover { background: rgba(255,255,255,0.22); transform: scale(1.05); }
+.lightbox-caption {
+  position: absolute;
+  bottom: 24px; left: 50%;
+  transform: translateX(-50%);
+  color: var(--white-dim);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  background: rgba(0,0,0,0.4);
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.08);
+  pointer-events: none;
+  max-width: 80%;
+  text-align: center;
+}
+@keyframes lightbox-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes lightbox-zoom {
+  from { transform: scale(0.88); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+@media (max-width: 768px) {
+  .lightbox { padding: 20px 10px; }
+  .lightbox-close { top: 12px; right: 12px; width: 40px; height: 40px; }
+}
+
 /* ── Phone mockups embedded within manual sections ──────────── */
 .manual-phones {
   display: flex;
@@ -909,11 +976,72 @@ footer a { color: var(--blue-bright); text-decoration:none; }
   </p>
 </footer>
 
+<!-- ── Lightbox for click-to-enlarge screenshots ─────────────── -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot viewer" hidden>
+  <button class="lightbox-close" aria-label="Close (Esc)">✕</button>
+  <img src="" alt="">
+  <div class="lightbox-caption"></div>
+</div>
+
 <script>
+// Scroll reveal
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+/* ─── Lightbox ───────────────────────────────────────────────
+ * Click any phone-mockup image → full-screen overlay with the
+ * same image at up to 90vh. Close by:
+ *   - clicking anywhere in the lightbox (backdrop, image, or X)
+ *   - pressing Escape
+ * No external library; all vanilla. Supports dynamic content.
+ */
+(function initLightbox() {
+  const lb = document.getElementById('lightbox');
+  if (!lb) return;
+  const lbImg = lb.querySelector('img');
+  const lbCaption = lb.querySelector('.lightbox-caption');
+
+  function open(src, alt, captionText) {
+    lbImg.src = src;
+    lbImg.alt = alt || '';
+    lbCaption.textContent = captionText || '';
+    lbCaption.style.display = captionText ? 'block' : 'none';
+    lb.hidden = false;
+    lb.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close() {
+    lb.classList.remove('is-open');
+    document.body.style.overflow = '';
+    // Delay hidden attribute so fade animation can play
+    setTimeout(() => {
+      lb.hidden = true;
+      lbImg.src = '';
+    }, 220);
+  }
+
+  // Wire up every phone-mockup image
+  document.querySelectorAll('.manual-phone-frame img').forEach(img => {
+    img.classList.add('lightbox-trigger');
+    img.addEventListener('click', () => {
+      // Find the sibling caption element for this phone
+      const phoneDiv = img.closest('.manual-phone');
+      const captionEl = phoneDiv ? phoneDiv.querySelector('.manual-phone-caption') : null;
+      open(img.src, img.alt, captionEl ? captionEl.textContent : '');
+    });
+  });
+
+  // Any click inside the lightbox closes it (backdrop, image, or X)
+  lb.addEventListener('click', close);
+
+  // Escape key closes
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lb.classList.contains('is-open')) close();
+  });
+})();
 </script>
 
 </body>
