@@ -1061,18 +1061,11 @@ footer {
     AdmitNote
   </a>
   <ul class="nav-links">
-    <li><a href="#tracks">Platforms</a></li>
+    <li><a href="#platforms">Platforms</a></li>
     <li><a href="#features">Features</a></li>
     <li><a href="#scores">Calculators</a></li>
     <li><a href="#privacy">Privacy</a></li>
-    <li class="nav-dropdown" tabindex="0">
-      <a href="#" onclick="event.preventDefault()">Manuals <span class="nav-dropdown-caret">▾</span></a>
-      <ul class="nav-dropdown-menu" role="menu">
-        <li><span class="nav-dropdown-menu-label">User Guides</span></li>
-        <li><a href="manual-web.html" role="menuitem">🌐 Web Manual</a></li>
-        <li><a href="manual.html" role="menuitem">🍎 iOS Manual</a></li>
-      </ul>
-    </li>
+    <li><a href="manual.html">User Manual</a></li>
     <li><a href="https://admitnote-web.vercel.app" class="nav-cta">Launch Web App →</a></li>
   </ul>
 </nav>
@@ -1093,14 +1086,14 @@ footer {
       hospital medicine.
     </p>
     <div class="hero-actions">
-      <a href="#tracks" class="btn-primary hero-track-btn" data-track="web">
+      <a href="https://admitnote-web.vercel.app" class="btn-primary hero-track-btn">
         <span class="apple-icon">🌐</span>
         <span class="hero-btn-stack">
           <span class="hero-btn-big">Web App</span>
           <span class="hero-btn-small">Runs in your browser</span>
         </span>
       </a>
-      <a href="#tracks" class="btn-secondary hero-track-btn" data-track="ios">
+      <a href="https://apps.apple.com/app/admitnote/id6762265910" class="btn-secondary hero-track-btn">
         <span class="apple-icon">🍎</span>
         <span class="hero-btn-stack">
           <span class="hero-btn-big">iOS App</span>
@@ -1109,7 +1102,7 @@ footer {
       </a>
     </div>
     <p style="font-size:0.82rem; color:var(--white-dim); margin-top:16px; font-weight:300;">
-      Pick a platform to see its screens, features, and pricing below. Common features (calculators, privacy, workflow) apply to both.
+      Same AI, same privacy, same $29/mo Pro subscription — whichever you pick.
       <a href="#workflow" style="color:var(--blue-bright); text-decoration:none; margin-left:6px;">See how it works →</a>
     </p>
     <div class="hero-stats">
@@ -1174,376 +1167,213 @@ footer {
   </div>
 </section>
 
-<!-- TRACKS (For Web / For iOS tabs) -->
-<section class="tracks-section" id="tracks">
+<!-- PLATFORMS + PRICING (unified — web and iOS are the same product) -->
+<section class="tracks-section" id="platforms">
   <div class="container">
+
+    <!-- Section intro -->
     <div class="tracks-heading reveal">
-      <div class="section-label">// Two ways to use it</div>
-      <h2 class="section-title">Pick your platform.</h2>
+      <div class="section-label">// Available everywhere</div>
+      <h2 class="section-title">One tool.<br>Every device you use.</h2>
       <p class="section-sub" style="margin:0 auto;">
-        Same clinical AI. Same privacy guarantee. Different form factors — choose the one that fits your workflow, or use both.
+        Same AI, same privacy, same price. Use AdmitNote in any browser on your
+        workstation, as a native app on your iPhone and iPad, or both at once
+        with end-to-end-encrypted cross-device handoff.
       </p>
     </div>
 
-    <div class="track-tabs-wrap reveal">
-      <div class="track-tabs" role="tablist" aria-label="Platform selector">
-        <button class="track-tab is-active" role="tab" aria-selected="true" aria-controls="track-web" data-track="web" id="tab-web">
-          <span class="track-tab-icon">🌐</span>
-          <span>For Web</span>
-          <span class="track-tab-badge">Recommended</span>
-        </button>
-        <button class="track-tab" role="tab" aria-selected="false" aria-controls="track-ios" data-track="ios" id="tab-ios">
-          <span class="track-tab-icon">🍎</span>
-          <span>For iOS</span>
-        </button>
-      </div>
-    </div>
-
-    <!-- ─── WEB TRACK PANEL ─── -->
-    <div class="track-panel is-active" role="tabpanel" id="track-web" aria-labelledby="tab-web">
-
-      <div class="track-hero">
-        <div>
-          <div class="track-hero-icon">🌐</div>
-          <div class="track-hero-eyebrow">// Web App</div>
-          <h2>Runs in any browser.<br>Desktop + phone.</h2>
-          <p>
-            The hosted web app. Magic-link sign-in, cross-device handoff, and the full AdmitNote
-            feature set — no install, no app store, works on hospital PCs where you can't install
-            anything. Start on a workstation, finish on your phone.
-          </p>
-          <div class="track-hero-actions">
-            <a href="https://admitnote-web.vercel.app" class="btn-primary">
-              <span class="apple-icon">🌐</span>
-              Launch Web App →
-            </a>
-            <a href="manual-web.html" class="btn-secondary">
-              Read the Web Manual
-            </a>
-          </div>
-        </div>
-        <div class="track-hero-aside">
-          <div class="track-hero-stat">
-            <div class="track-hero-stat-n" style="color:var(--blue-bright);">🔗</div>
-            <div class="track-hero-stat-label"><strong style="color:var(--white); font-weight:600;">Cross-device handoff</strong><br>Start on your phone, finish on the workstation</div>
-          </div>
-          <div class="track-hero-stat">
-            <div class="track-hero-stat-n" style="color:var(--blue-bright);">🏥</div>
-            <div class="track-hero-stat-label"><strong style="color:var(--white); font-weight:600;">Hospital-PC friendly</strong><br>No install, no admin, no camera required</div>
-          </div>
-          <div class="track-hero-stat">
-            <div class="track-hero-stat-n" style="color:var(--blue-bright);">⚡</div>
-            <div class="track-hero-stat-label"><strong style="color:var(--white); font-weight:600;">Always up-to-date</strong><br>New features ship instantly, no update prompts</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="track-subhead">
-        <h3>Why the web app?</h3>
-        <p>Built to follow you across every screen on your shift.</p>
-      </div>
-      <div class="track-features-grid">
-        <div class="track-feature">
-          <div class="track-feature-icon">🔗</div>
-          <div class="track-feature-title">Cross-device handoff</div>
-          <div class="track-feature-desc">Start on your phone at bedside, finish on the workstation. Encrypted QR + 6-digit code pairing.</div>
-        </div>
-        <div class="track-feature">
-          <div class="track-feature-icon">✉️</div>
-          <div class="track-feature-title">Magic-link sign-in</div>
-          <div class="track-feature-desc">No password to remember. Email link, click, you're in. Sessions remembered across devices.</div>
-        </div>
-        <div class="track-feature">
-          <div class="track-feature-icon">🏥</div>
-          <div class="track-feature-title">Works on hospital PCs</div>
-          <div class="track-feature-desc">No admin install, no camera required. Works through locked-down hospital browsers.</div>
-        </div>
-        <div class="track-feature">
-          <div class="track-feature-icon">🔒</div>
-          <div class="track-feature-title">E2E-encrypted handoff</div>
-          <div class="track-feature-desc">AES-256-GCM + ECDH pairing. Our server only sees opaque ciphertext.</div>
-        </div>
-        <div class="track-feature">
-          <div class="track-feature-icon">📱</div>
-          <div class="track-feature-title">Responsive on any screen</div>
-          <div class="track-feature-desc">Works on desktop monitors, iPads, and phones. Same UI, no app install.</div>
-        </div>
-        <div class="track-feature gold">
-          <div class="track-feature-icon">⚡</div>
-          <div class="track-feature-title">Always up-to-date</div>
-          <div class="track-feature-desc">New features ship instantly. No App Store approval, no update prompts.</div>
-        </div>
-      </div>
-
-      <div class="track-subhead">
-        <h3>Web app pricing</h3>
-        <p>Free to start. Upgrade only if you use it heavily.</p>
-      </div>
-      <div class="pricing-grid">
-        <div class="price-card">
-          <div class="price-tier">Free</div>
-          <div class="price-amount">$0 <span>/ month</span></div>
-          <div class="price-alt">No credit card required</div>
-          <ul class="price-features">
-            <li>5 AI-structured notes per month</li>
-            <li>Cross-device handoff (QR + 6-digit code)</li>
-            <li>All clinical calculators</li>
-            <li>HIPAA Safe Harbor de-identification</li>
-            <li>Zero patient notes stored on our servers</li>
-          </ul>
-          <a href="https://admitnote-web.vercel.app" class="btn-secondary" style="width:100%; justify-content:center;">Start free →</a>
-        </div>
-        <div class="price-card price-card-pro">
-          <div class="price-tier">Pro <span class="price-badge">Most popular</span></div>
-          <div class="price-amount">$29 <span>/ month</span></div>
-          <div class="price-alt">or $249/year — save $99</div>
-          <ul class="price-features">
-            <li><strong>Unlimited</strong> AI-structured notes</li>
-            <li>Everything in Free</li>
-            <li>Priority email support</li>
-            <li>Cancel anytime — self-serve portal</li>
-            <li>Still zero patient notes on our servers</li>
-          </ul>
-          <a href="https://admitnote-web.vercel.app/upgrade" class="btn-primary" style="width:100%; justify-content:center;">Upgrade to Pro →</a>
-        </div>
-      </div>
-
-      <div class="track-manual-link">
-        <div class="track-manual-link-title">📘 Full walkthrough of the web app</div>
-        <div class="track-manual-link-desc">Sign-in, handoff, note creation, scores, exports — every screen explained.</div>
-        <a href="manual-web.html" class="btn-primary">
-          Open Web Manual →
+    <!-- Platform launch cards -->
+    <div class="platforms-grid reveal" style="margin-bottom:56px;">
+      <div class="platform-card platform-web">
+        <div class="platform-icon">🌐</div>
+        <div class="platform-name">Web</div>
+        <div class="platform-sub">Any browser, any device</div>
+        <ul class="platform-features">
+          <li>Desktop, laptop, or mobile browser</li>
+          <li>Works on locked-down hospital PCs</li>
+          <li>Magic-link sign-in — no password</li>
+          <li>Always up-to-date</li>
+          <li>Nothing to install</li>
+        </ul>
+        <a href="https://admitnote-web.vercel.app" class="btn-primary">
+          <span class="apple-icon">🌐</span>
+          Launch Web App →
         </a>
       </div>
-
-    </div>
-
-    <!-- ─── iOS TRACK PANEL ─── -->
-    <div class="track-panel" role="tabpanel" id="track-ios" aria-labelledby="tab-ios" hidden>
-
-      <div class="track-hero track-hero-ios">
-        <div>
-          <div class="track-hero-icon">🍎</div>
-          <div class="track-hero-eyebrow">// iOS App</div>
-          <h2>Native iPhone &amp; iPad.<br>Built for the bedside.</h2>
-          <p>
-            The native iOS app — tactile, fast, and always on your home screen. Bring your own
-            Anthropic + OpenAI API keys and pay nothing on top. Perfect for clinicians who prefer
-            a dedicated app and want full control of their own AI spend.
-          </p>
-          <div class="track-hero-actions">
-            <a href="https://apps.apple.com/app/admitnote/id6762265910" class="btn-primary">
-              <span class="apple-icon">🍎</span>
-              Download on App Store →
-            </a>
-            <a href="manual.html" class="btn-secondary">
-              Read the iOS Manual
-            </a>
-          </div>
-        </div>
-        <div class="track-hero-aside">
-          <div class="track-hero-stat">
-            <div class="track-hero-stat-n" style="color:var(--gold-light);">⚡</div>
-            <div class="track-hero-stat-label"><strong style="color:var(--white); font-weight:600;">Native speed</strong><br>No browser overhead — microphone &amp; UI feel instant</div>
-          </div>
-          <div class="track-hero-stat">
-            <div class="track-hero-stat-n" style="color:var(--gold-light);">🔑</div>
-            <div class="track-hero-stat-label"><strong style="color:var(--white); font-weight:600;">Bring your own keys</strong><br>You own the spend cap, pay providers directly</div>
-          </div>
-          <div class="track-hero-stat">
-            <div class="track-hero-stat-n" style="color:var(--gold-light);">🏠</div>
-            <div class="track-hero-stat-label"><strong style="color:var(--white); font-weight:600;">No account needed</strong><br>100% on-device — nothing syncs to the cloud</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="track-subhead">
-        <h3>Why the iOS app?</h3>
-        <p>For clinicians who want speed, privacy, and total control over their AI spend.</p>
-      </div>
-      <div class="track-features-grid">
-        <div class="track-feature gold">
-          <div class="track-feature-icon">⚡</div>
-          <div class="track-feature-title">Native speed</div>
-          <div class="track-feature-desc">No browser overhead. Microphone, dictation, and UI feel instant.</div>
-        </div>
-        <div class="track-feature gold">
-          <div class="track-feature-icon">🔑</div>
-          <div class="track-feature-title">Bring your own keys</div>
-          <div class="track-feature-desc">Use your own Anthropic + OpenAI API keys. Zero subscription, you control the spend.</div>
-        </div>
-        <div class="track-feature gold">
-          <div class="track-feature-icon">🏠</div>
-          <div class="track-feature-title">Home-screen app</div>
-          <div class="track-feature-desc">One tap to launch. Works offline for review. Siri-friendly shortcuts.</div>
-        </div>
-        <div class="track-feature gold">
-          <div class="track-feature-icon">🔒</div>
-          <div class="track-feature-title">No account required</div>
-          <div class="track-feature-desc">No sign-in, no email, no cloud. 100% on-device encrypted storage.</div>
-        </div>
-        <div class="track-feature gold">
-          <div class="track-feature-icon">🎙️</div>
-          <div class="track-feature-title">Native dictation</div>
-          <div class="track-feature-desc">iOS microphone + Whisper. Hold-to-dictate, voice commands, live preview.</div>
-        </div>
-        <div class="track-feature gold">
-          <div class="track-feature-icon">⚕️</div>
-          <div class="track-feature-title">Same clinical scores</div>
-          <div class="track-feature-desc">All 18 calculators. Same AI structuring. Same guidelines library.</div>
-        </div>
-      </div>
-
-      <div class="track-subhead">
-        <h3>iOS app pricing</h3>
-        <p>The app itself is free forever. You bring your own AI keys and pay Anthropic + OpenAI directly — no markup, full cost control.</p>
-      </div>
-      <div class="pricing-grid">
-        <div class="price-card">
-          <div class="price-tier">The App</div>
-          <div class="price-amount">$0 <span>/ forever</span></div>
-          <div class="price-alt">No subscription, no account</div>
-          <ul class="price-features">
-            <li>Free download on the App Store</li>
-            <li>All 18 clinical scoring calculators</li>
-            <li>Full AI structuring and H&amp;P generation</li>
-            <li>Zero cloud — 100% on-device storage</li>
-            <li>No telemetry, no analytics, no ads</li>
-          </ul>
-          <a href="https://apps.apple.com/app/admitnote/id6762265910" class="btn-secondary" style="width:100%; justify-content:center;">
-            <span class="apple-icon">🍎</span>
-            Download free →
-          </a>
-        </div>
-        <div class="price-card price-card-pro">
-          <div class="price-tier">AI Usage <span class="price-badge">BYO keys</span></div>
-          <div class="price-amount">~$5–20 <span>/ month typical</span></div>
-          <div class="price-alt">Paid directly to Anthropic + OpenAI</div>
-          <ul class="price-features">
-            <li><strong>Bring your own API keys</strong> — Anthropic + OpenAI</li>
-            <li>You set your own monthly spend cap</li>
-            <li>~$0.05–0.15 per structured note, typical</li>
-            <li>Pay providers directly — no markup</li>
-            <li>Full cost transparency from day one</li>
-          </ul>
-          <a href="manual.html" class="btn-primary" style="width:100%; justify-content:center;">How to set up keys →</a>
-        </div>
-      </div>
-
-      <div class="track-subhead">
-        <h3>See every screen</h3>
-        <p>A visual preview of the native iOS experience — 10 key screens from the app.</p>
-      </div>
-
-      <!-- iOS phone gallery row 1 -->
-      <div style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap; margin-bottom:20px;">
-        <div style="text-align:center;">
-          <div style="width:140px; background:#1A1A2E; border-radius:26px; padding:7px; border:2px solid rgba(255,255,255,0.12); box-shadow:0 20px 40px rgba(0,0,0,0.6); transition:transform 0.3s; display:inline-block;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">
-            <div style="position:relative;">
-              <div style="position:absolute; top:10px; left:50%; transform:translateX(-50%); width:40px; height:5px; background:rgba(255,255,255,0.15); border-radius:3px; z-index:2;"></div>
-              <img src="1. Clinical Notes.png" style="width:100%; border-radius:20px; display:block; aspect-ratio:9/19.5; object-fit:cover; object-position:top;" alt="Notes List">
-            </div>
-          </div>
-          <div style="margin-top:8px; font-size:0.7rem; color:var(--white-dim);">Clinical Notes</div>
-        </div>
-        <div style="text-align:center;">
-          <div style="width:140px; background:#1A1A2E; border-radius:26px; padding:7px; border:2px solid rgba(255,255,255,0.12); box-shadow:0 20px 40px rgba(0,0,0,0.6); transition:transform 0.3s; display:inline-block;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">
-            <div style="position:relative;">
-              <div style="position:absolute; top:10px; left:50%; transform:translateX(-50%); width:40px; height:5px; background:rgba(255,255,255,0.15); border-radius:3px; z-index:2;"></div>
-              <img src="8. Privacy Policy.png" style="width:100%; border-radius:20px; display:block; aspect-ratio:9/19.5; object-fit:cover; object-position:top;" alt="Privacy Notice">
-            </div>
-          </div>
-          <div style="margin-top:8px; font-size:0.7rem; color:var(--white-dim);">Privacy Notice</div>
-        </div>
-        <div style="text-align:center;">
-          <div style="width:140px; background:#1A1A2E; border-radius:26px; padding:7px; border:2px solid rgba(255,255,255,0.12); box-shadow:0 20px 40px rgba(0,0,0,0.6); transition:transform 0.3s; display:inline-block;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">
-            <div style="position:relative;">
-              <div style="position:absolute; top:10px; left:50%; transform:translateX(-50%); width:40px; height:5px; background:rgba(255,255,255,0.15); border-radius:3px; z-index:2;"></div>
-              <img src="2. New Encounter.png" style="width:100%; border-radius:20px; display:block; aspect-ratio:9/19.5; object-fit:cover; object-position:top;" alt="New Encounter">
-            </div>
-          </div>
-          <div style="margin-top:8px; font-size:0.7rem; color:var(--white-dim);">New Encounter</div>
-        </div>
-        <div style="text-align:center;">
-          <div style="width:140px; background:#1A1A2E; border-radius:26px; padding:7px; border:2px solid rgba(255,255,255,0.12); box-shadow:0 20px 40px rgba(0,0,0,0.6); transition:transform 0.3s; display:inline-block;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">
-            <div style="position:relative;">
-              <div style="position:absolute; top:10px; left:50%; transform:translateX(-50%); width:40px; height:5px; background:rgba(255,255,255,0.15); border-radius:3px; z-index:2;"></div>
-              <img src="3. New Encounter Recording.png" style="width:100%; border-radius:20px; display:block; aspect-ratio:9/19.5; object-fit:cover; object-position:top;" alt="Recording">
-            </div>
-          </div>
-          <div style="margin-top:8px; font-size:0.7rem; color:var(--white-dim);">Recording</div>
-        </div>
-        <div style="text-align:center;">
-          <div style="width:140px; background:#1A1A2E; border-radius:26px; padding:7px; border:2px solid rgba(255,255,255,0.12); box-shadow:0 20px 40px rgba(0,0,0,0.6); transition:transform 0.3s; display:inline-block;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">
-            <div style="position:relative;">
-              <div style="position:absolute; top:10px; left:50%; transform:translateX(-50%); width:40px; height:5px; background:rgba(255,255,255,0.15); border-radius:3px; z-index:2;"></div>
-              <img src="4.HPI.png" style="width:100%; border-radius:20px; display:block; aspect-ratio:9/19.5; object-fit:cover; object-position:top;" alt="Note Detail">
-            </div>
-          </div>
-          <div style="margin-top:8px; font-size:0.7rem; color:var(--white-dim);">Structured H&P</div>
-        </div>
-      </div>
-
-      <!-- iOS phone gallery row 2 -->
-      <div style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap; margin-bottom:32px;">
-        <div style="text-align:center;">
-          <div style="width:140px; background:#1A1A2E; border-radius:26px; padding:7px; border:2px solid rgba(255,255,255,0.12); box-shadow:0 20px 40px rgba(0,0,0,0.6); transition:transform 0.3s; display:inline-block;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">
-            <div style="position:relative;">
-              <div style="position:absolute; top:10px; left:50%; transform:translateX(-50%); width:40px; height:5px; background:rgba(255,255,255,0.15); border-radius:3px; z-index:2;"></div>
-              <img src="5. HPI.png" style="width:100%; border-radius:20px; display:block; aspect-ratio:9/19.5; object-fit:cover; object-position:top;" alt="Assessment">
-            </div>
-          </div>
-          <div style="margin-top:8px; font-size:0.7rem; color:var(--white-dim);">Assessment &amp; DDx</div>
-        </div>
-        <div style="text-align:center;">
-          <div style="width:140px; background:#1A1A2E; border-radius:26px; padding:7px; border:2px solid rgba(255,255,255,0.12); box-shadow:0 20px 40px rgba(0,0,0,0.6); transition:transform 0.3s; display:inline-block;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">
-            <div style="position:relative;">
-              <div style="position:absolute; top:10px; left:50%; transform:translateX(-50%); width:40px; height:5px; background:rgba(255,255,255,0.15); border-radius:3px; z-index:2;"></div>
-              <img src="7. ICD-10.png" style="width:100%; border-radius:20px; display:block; aspect-ratio:9/19.5; object-fit:cover; object-position:top;" alt="ICD-10">
-            </div>
-          </div>
-          <div style="margin-top:8px; font-size:0.7rem; color:var(--white-dim);">ICD-10 &amp; CPT</div>
-        </div>
-        <div style="text-align:center;">
-          <div style="width:140px; background:#1A1A2E; border-radius:26px; padding:7px; border:2px solid rgba(255,255,255,0.12); box-shadow:0 20px 40px rgba(0,0,0,0.6); transition:transform 0.3s; display:inline-block;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">
-            <div style="position:relative;">
-              <div style="position:absolute; top:10px; left:50%; transform:translateX(-50%); width:40px; height:5px; background:rgba(255,255,255,0.15); border-radius:3px; z-index:2;"></div>
-              <img src="6. Clinical Scores.png" style="width:100%; border-radius:20px; display:block; aspect-ratio:9/19.5; object-fit:cover; object-position:top;" alt="Clinical Scores">
-            </div>
-          </div>
-          <div style="margin-top:8px; font-size:0.7rem; color:var(--white-dim);">Clinical Scores</div>
-        </div>
-        <div style="text-align:center;">
-          <div style="width:140px; background:#1A1A2E; border-radius:26px; padding:7px; border:2px solid rgba(255,255,255,0.12); box-shadow:0 20px 40px rgba(0,0,0,0.6); transition:transform 0.3s; display:inline-block;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">
-            <div style="position:relative;">
-              <div style="position:absolute; top:10px; left:50%; transform:translateX(-50%); width:40px; height:5px; background:rgba(255,255,255,0.15); border-radius:3px; z-index:2;"></div>
-              <img src="10. Dropdown Menu.png" style="width:100%; border-radius:20px; display:block; aspect-ratio:9/19.5; object-fit:cover; object-position:top;" alt="Note Menu">
-            </div>
-          </div>
-          <div style="margin-top:8px; font-size:0.7rem; color:var(--white-dim);">Note Menu</div>
-        </div>
-        <div style="text-align:center;">
-          <div style="width:140px; background:#1A1A2E; border-radius:26px; padding:7px; border:2px solid rgba(255,255,255,0.12); box-shadow:0 20px 40px rgba(0,0,0,0.6); transition:transform 0.3s; display:inline-block;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">
-            <div style="position:relative;">
-              <div style="position:absolute; top:10px; left:50%; transform:translateX(-50%); width:40px; height:5px; background:rgba(255,255,255,0.15); border-radius:3px; z-index:2;"></div>
-              <img src="11. Help and Guide.png" style="width:100%; border-radius:20px; display:block; aspect-ratio:9/19.5; object-fit:cover; object-position:top;" alt="Help Guide">
-            </div>
-          </div>
-          <div style="margin-top:8px; font-size:0.7rem; color:var(--white-dim);">Help &amp; Guide</div>
-        </div>
-      </div>
-
-      <div class="track-manual-link">
-        <div class="track-manual-link-title">📘 Full iOS walkthrough — every screen</div>
-        <div class="track-manual-link-desc">All 13 sections, with screenshots for every feature.</div>
-        <a href="manual.html" class="btn-primary">
-          Open iOS Manual →
+      <div class="platform-card platform-ios">
+        <div class="platform-icon">🍎</div>
+        <div class="platform-name">iOS</div>
+        <div class="platform-sub">Native iPhone &amp; iPad</div>
+        <ul class="platform-features">
+          <li>One-tap launch from your home screen</li>
+          <li>Native microphone &amp; dictation</li>
+          <li>Identical features to the web app</li>
+          <li>Magic-link sign-in &mdash; same account</li>
+          <li>Cross-device handoff via QR or 6-digit code</li>
+        </ul>
+        <a href="https://apps.apple.com/app/admitnote/id6762265910" class="btn-secondary">
+          <span class="apple-icon">🍎</span>
+          Download on App Store →
         </a>
       </div>
-
     </div>
+
+    <!-- Pricing — applies to all platforms -->
+    <div class="tracks-heading reveal" style="margin-bottom:32px;">
+      <div class="section-label">// Pricing</div>
+      <h2 class="section-title" style="font-size:clamp(1.5rem,3vw,2.2rem);">One subscription.<br>Every device.</h2>
+      <p class="section-sub" style="margin:0 auto;">
+        Subscribe once via admitnote.com — your Pro access follows your
+        email to every platform. We don&rsquo;t use Apple In-App Purchase,
+        so you pay the same $29 whether you sign up on your desktop or
+        your iPhone.
+      </p>
+    </div>
+    <div class="pricing-grid reveal">
+      <div class="price-card">
+        <div class="price-tier">Free</div>
+        <div class="price-amount">$0 <span>/ month</span></div>
+        <div class="price-alt">No credit card required</div>
+        <ul class="price-features">
+          <li>5 AI-structured notes per month</li>
+          <li>Cross-device handoff (QR + 6-digit code)</li>
+          <li>All clinical calculators</li>
+          <li>HIPAA Safe Harbor de-identification</li>
+          <li>Zero patient notes stored on our servers</li>
+        </ul>
+        <a href="https://admitnote-web.vercel.app" class="btn-secondary" style="width:100%; justify-content:center;">Start free →</a>
+      </div>
+      <div class="price-card price-card-pro">
+        <div class="price-tier">Pro <span class="price-badge">Most popular</span></div>
+        <div class="price-amount">$29 <span>/ month</span></div>
+        <div class="price-alt">or $249/year — save $99</div>
+        <ul class="price-features">
+          <li><strong>Unlimited</strong> AI-structured notes</li>
+          <li>Everything in Free</li>
+          <li>Priority email support</li>
+          <li>Cancel anytime — self-serve portal</li>
+          <li>Still zero patient notes on our servers</li>
+        </ul>
+        <a href="https://admitnote-web.vercel.app/upgrade" class="btn-primary" style="width:100%; justify-content:center;">Upgrade to Pro →</a>
+      </div>
+    </div>
+
+    <!-- Visual preview: see what it looks like on iPhone -->
+    <div class="track-subhead">
+      <h3>See every screen</h3>
+      <p>A visual preview of the AdmitNote experience &mdash; same UI on every device.</p>
+    </div>
+
+    <!-- Phone gallery row 1 -->
+    <div style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap; margin-bottom:20px;">
+      <div style="text-align:center;">
+        <div style="width:140px; background:#1A1A2E; border-radius:26px; padding:7px; border:2px solid rgba(255,255,255,0.12); box-shadow:0 20px 40px rgba(0,0,0,0.6); transition:transform 0.3s; display:inline-block;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">
+          <div style="position:relative;">
+            <div style="position:absolute; top:10px; left:50%; transform:translateX(-50%); width:40px; height:5px; background:rgba(255,255,255,0.15); border-radius:3px; z-index:2;"></div>
+            <img src="1. Clinical Notes.png" style="width:100%; border-radius:20px; display:block; aspect-ratio:9/19.5; object-fit:cover; object-position:top;" alt="Notes List">
+          </div>
+        </div>
+        <div style="margin-top:8px; font-size:0.7rem; color:var(--white-dim);">Clinical Notes</div>
+      </div>
+      <div style="text-align:center;">
+        <div style="width:140px; background:#1A1A2E; border-radius:26px; padding:7px; border:2px solid rgba(255,255,255,0.12); box-shadow:0 20px 40px rgba(0,0,0,0.6); transition:transform 0.3s; display:inline-block;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">
+          <div style="position:relative;">
+            <div style="position:absolute; top:10px; left:50%; transform:translateX(-50%); width:40px; height:5px; background:rgba(255,255,255,0.15); border-radius:3px; z-index:2;"></div>
+            <img src="2. New Encounter.png" style="width:100%; border-radius:20px; display:block; aspect-ratio:9/19.5; object-fit:cover; object-position:top;" alt="New Encounter">
+          </div>
+        </div>
+        <div style="margin-top:8px; font-size:0.7rem; color:var(--white-dim);">New Encounter</div>
+      </div>
+      <div style="text-align:center;">
+        <div style="width:140px; background:#1A1A2E; border-radius:26px; padding:7px; border:2px solid rgba(255,255,255,0.12); box-shadow:0 20px 40px rgba(0,0,0,0.6); transition:transform 0.3s; display:inline-block;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">
+          <div style="position:relative;">
+            <div style="position:absolute; top:10px; left:50%; transform:translateX(-50%); width:40px; height:5px; background:rgba(255,255,255,0.15); border-radius:3px; z-index:2;"></div>
+            <img src="3. New Encounter Recording.png" style="width:100%; border-radius:20px; display:block; aspect-ratio:9/19.5; object-fit:cover; object-position:top;" alt="Recording">
+          </div>
+        </div>
+        <div style="margin-top:8px; font-size:0.7rem; color:var(--white-dim);">Recording</div>
+      </div>
+      <div style="text-align:center;">
+        <div style="width:140px; background:#1A1A2E; border-radius:26px; padding:7px; border:2px solid rgba(255,255,255,0.12); box-shadow:0 20px 40px rgba(0,0,0,0.6); transition:transform 0.3s; display:inline-block;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">
+          <div style="position:relative;">
+            <div style="position:absolute; top:10px; left:50%; transform:translateX(-50%); width:40px; height:5px; background:rgba(255,255,255,0.15); border-radius:3px; z-index:2;"></div>
+            <img src="4.HPI.png" style="width:100%; border-radius:20px; display:block; aspect-ratio:9/19.5; object-fit:cover; object-position:top;" alt="Note Detail">
+          </div>
+        </div>
+        <div style="margin-top:8px; font-size:0.7rem; color:var(--white-dim);">Structured H&amp;P</div>
+      </div>
+      <div style="text-align:center;">
+        <div style="width:140px; background:#1A1A2E; border-radius:26px; padding:7px; border:2px solid rgba(255,255,255,0.12); box-shadow:0 20px 40px rgba(0,0,0,0.6); transition:transform 0.3s; display:inline-block;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">
+          <div style="position:relative;">
+            <div style="position:absolute; top:10px; left:50%; transform:translateX(-50%); width:40px; height:5px; background:rgba(255,255,255,0.15); border-radius:3px; z-index:2;"></div>
+            <img src="5. HPI.png" style="width:100%; border-radius:20px; display:block; aspect-ratio:9/19.5; object-fit:cover; object-position:top;" alt="Assessment">
+          </div>
+        </div>
+        <div style="margin-top:8px; font-size:0.7rem; color:var(--white-dim);">Assessment &amp; DDx</div>
+      </div>
+    </div>
+
+    <!-- Phone gallery row 2 -->
+    <div style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap; margin-bottom:40px;">
+      <div style="text-align:center;">
+        <div style="width:140px; background:#1A1A2E; border-radius:26px; padding:7px; border:2px solid rgba(255,255,255,0.12); box-shadow:0 20px 40px rgba(0,0,0,0.6); transition:transform 0.3s; display:inline-block;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">
+          <div style="position:relative;">
+            <div style="position:absolute; top:10px; left:50%; transform:translateX(-50%); width:40px; height:5px; background:rgba(255,255,255,0.15); border-radius:3px; z-index:2;"></div>
+            <img src="7. ICD-10.png" style="width:100%; border-radius:20px; display:block; aspect-ratio:9/19.5; object-fit:cover; object-position:top;" alt="ICD-10">
+          </div>
+        </div>
+        <div style="margin-top:8px; font-size:0.7rem; color:var(--white-dim);">ICD-10 &amp; CPT</div>
+      </div>
+      <div style="text-align:center;">
+        <div style="width:140px; background:#1A1A2E; border-radius:26px; padding:7px; border:2px solid rgba(255,255,255,0.12); box-shadow:0 20px 40px rgba(0,0,0,0.6); transition:transform 0.3s; display:inline-block;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">
+          <div style="position:relative;">
+            <div style="position:absolute; top:10px; left:50%; transform:translateX(-50%); width:40px; height:5px; background:rgba(255,255,255,0.15); border-radius:3px; z-index:2;"></div>
+            <img src="6. Clinical Scores.png" style="width:100%; border-radius:20px; display:block; aspect-ratio:9/19.5; object-fit:cover; object-position:top;" alt="Clinical Scores">
+          </div>
+        </div>
+        <div style="margin-top:8px; font-size:0.7rem; color:var(--white-dim);">Clinical Scores</div>
+      </div>
+      <div style="text-align:center;">
+        <div style="width:140px; background:#1A1A2E; border-radius:26px; padding:7px; border:2px solid rgba(255,255,255,0.12); box-shadow:0 20px 40px rgba(0,0,0,0.6); transition:transform 0.3s; display:inline-block;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">
+          <div style="position:relative;">
+            <div style="position:absolute; top:10px; left:50%; transform:translateX(-50%); width:40px; height:5px; background:rgba(255,255,255,0.15); border-radius:3px; z-index:2;"></div>
+            <img src="10. Dropdown Menu.png" style="width:100%; border-radius:20px; display:block; aspect-ratio:9/19.5; object-fit:cover; object-position:top;" alt="Note Menu">
+          </div>
+        </div>
+        <div style="margin-top:8px; font-size:0.7rem; color:var(--white-dim);">Note Menu</div>
+      </div>
+      <div style="text-align:center;">
+        <div style="width:140px; background:#1A1A2E; border-radius:26px; padding:7px; border:2px solid rgba(255,255,255,0.12); box-shadow:0 20px 40px rgba(0,0,0,0.6); transition:transform 0.3s; display:inline-block;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">
+          <div style="position:relative;">
+            <div style="position:absolute; top:10px; left:50%; transform:translateX(-50%); width:40px; height:5px; background:rgba(255,255,255,0.15); border-radius:3px; z-index:2;"></div>
+            <img src="11. Help and Guide.png" style="width:100%; border-radius:20px; display:block; aspect-ratio:9/19.5; object-fit:cover; object-position:top;" alt="Help Guide">
+          </div>
+        </div>
+        <div style="margin-top:8px; font-size:0.7rem; color:var(--white-dim);">Help &amp; Guide</div>
+      </div>
+      <div style="text-align:center;">
+        <div style="width:140px; background:#1A1A2E; border-radius:26px; padding:7px; border:2px solid rgba(255,255,255,0.12); box-shadow:0 20px 40px rgba(0,0,0,0.6); transition:transform 0.3s; display:inline-block;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">
+          <div style="position:relative;">
+            <div style="position:absolute; top:10px; left:50%; transform:translateX(-50%); width:40px; height:5px; background:rgba(255,255,255,0.15); border-radius:3px; z-index:2;"></div>
+            <img src="8. Privacy Policy.png" style="width:100%; border-radius:20px; display:block; aspect-ratio:9/19.5; object-fit:cover; object-position:top;" alt="Privacy Notice">
+          </div>
+        </div>
+        <div style="margin-top:8px; font-size:0.7rem; color:var(--white-dim);">Privacy Notice</div>
+      </div>
+    </div>
+
+    <!-- Manual CTA -->
+    <div class="track-manual-link">
+      <div class="track-manual-link-title">📘 Full walkthrough</div>
+      <div class="track-manual-link-desc">Sign-in, recording, cross-device handoff, clinical scores, export — every screen, explained.</div>
+      <a href="manual.html" class="btn-primary">
+        Open User Manual →
+      </a>
+    </div>
+
   </div>
 </section>
+
 
 <!-- FEATURES -->
 <section id="features">
@@ -1786,8 +1616,7 @@ footer {
   <div class="footer-logo">AdmitNote</div>
   <ul class="footer-links">
     <li><a href="#features">Features</a></li>
-    <li><a href="manual-web.html">Web Manual</a></li>
-    <li><a href="manual.html">iOS Manual</a></li>
+    <li><a href="manual.html">User Manual</a></li>
     <li><a href="privacy_policy.html">Privacy Policy</a></li>
     <li><a href="mailto:support@admitnote.com">Support</a></li>
   </ul>
@@ -1813,61 +1642,6 @@ document.querySelectorAll('.feature-card').forEach((card, i) => {
   observer.observe(card);
 });
 
-/* ─── PLATFORM TRACK TABS ─────────────────────────────────────────
- * Bifurcates the page into a "For Web" and "For iOS" sub-area.
- * - Hero buttons ("Web App" / "iOS App") select + scroll to tracks
- * - Clickable tab buttons toggle panels
- * - URL hash (#ios or #web) opens the right panel on page load
- * - Preference remembered in localStorage for returning visitors
- */
-(function initTrackTabs() {
-  const tabs   = document.querySelectorAll('.track-tab');
-  const panels = document.querySelectorAll('.track-panel');
-  if (!tabs.length || !panels.length) return;
-
-  function selectTrack(track) {
-    tabs.forEach(t => {
-      const on = t.dataset.track === track;
-      t.classList.toggle('is-active', on);
-      t.setAttribute('aria-selected', on ? 'true' : 'false');
-    });
-    panels.forEach(p => {
-      const on = p.id === `track-${track}`;
-      p.classList.toggle('is-active', on);
-      if (on) { p.removeAttribute('hidden'); } else { p.setAttribute('hidden',''); }
-    });
-    try { localStorage.setItem('admitnote.preferredTrack', track); } catch {}
-  }
-
-  // Tab button clicks
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => selectTrack(tab.dataset.track));
-  });
-
-  // Hero "Web App" / "iOS App" buttons → bifurcate + scroll
-  document.querySelectorAll('.hero-track-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      const track = btn.dataset.track;
-      if (track) selectTrack(track);
-      // Let the default #tracks anchor scroll happen naturally
-    });
-  });
-
-  // Initial selection priority: URL hash > saved preference > default (web)
-  const hash = (window.location.hash || '').replace('#','').toLowerCase();
-  let initial = 'web';
-  if (hash === 'ios' || hash === 'track-ios') {
-    initial = 'ios';
-  } else if (hash === 'web' || hash === 'track-web') {
-    initial = 'web';
-  } else {
-    try {
-      const saved = localStorage.getItem('admitnote.preferredTrack');
-      if (saved === 'ios' || saved === 'web') initial = saved;
-    } catch {}
-  }
-  selectTrack(initial);
-})();
 </script>
 </body>
 </html>
