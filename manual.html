@@ -342,6 +342,60 @@ footer a { color: var(--blue-bright); text-decoration:none; }
   .hero { padding:100px 20px 40px; }
   .two-col { grid-template-columns:1fr; }
   .pricing-compact { grid-template-columns:1fr; }
+  .manual-phones { gap: 16px; }
+  .manual-phone { width: 160px; }
+}
+
+/* ── Phone mockups embedded within manual sections ──────────── */
+.manual-phones {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 32px 0 8px;
+}
+.manual-phone {
+  text-align: center;
+  width: 190px;
+}
+.manual-phone-frame {
+  background: #1A1A2E;
+  border-radius: 28px;
+  padding: 8px;
+  border: 2px solid rgba(255,255,255,0.12);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+  transition: transform 0.3s;
+  position: relative;
+}
+.manual-phone-frame:hover { transform: translateY(-4px); }
+.manual-phone-frame::before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 5px;
+  background: rgba(255,255,255,0.18);
+  border-radius: 3px;
+  z-index: 2;
+  pointer-events: none;
+}
+.manual-phone-frame img {
+  width: 100%;
+  display: block;
+  border-radius: 22px;
+  aspect-ratio: 9 / 19.5;
+  object-fit: cover;
+  object-position: top;
+}
+.manual-phone-caption {
+  margin-top: 10px;
+  font-size: 0.74rem;
+  color: var(--white-dim);
+  line-height: 1.4;
+  font-family: var(--font-mono);
+  letter-spacing: 0.04em;
 }
 </style>
 </head>
@@ -395,6 +449,17 @@ footer a { color: var(--blue-bright); text-decoration:none; }
     sign-in link that expires in 1 hour.
   </p>
 
+  <div class="manual-phones">
+    <div class="manual-phone">
+      <div class="manual-phone-frame"><img src="sign-in.png" alt="Sign in screen"></div>
+      <div class="manual-phone-caption">Enter your email</div>
+    </div>
+    <div class="manual-phone">
+      <div class="manual-phone-frame"><img src="magic-link-sent.png" alt="Magic link sent confirmation"></div>
+      <div class="manual-phone-caption">Check your email</div>
+    </div>
+  </div>
+
   <h3 class="subheading">First-time sign-in</h3>
   <ul class="step-list">
     <li><div class="step-num">1</div><div class="step-text">Open <code>admitnote-web.vercel.app</code> (or <code>app.admitnote.com</code> once the custom subdomain is set up).</div></li>
@@ -438,6 +503,21 @@ footer a { color: var(--blue-bright); text-decoration:none; }
     Then you either record the encounter or paste an existing transcript.
   </p>
 
+  <div class="manual-phones">
+    <div class="manual-phone">
+      <div class="manual-phone-frame"><img src="new-note.png" alt="New note form with initials and chief complaint"></div>
+      <div class="manual-phone-caption">Initials + CC</div>
+    </div>
+    <div class="manual-phone">
+      <div class="manual-phone-frame"><img src="recording.png" alt="Recording an encounter"></div>
+      <div class="manual-phone-caption">Recording</div>
+    </div>
+    <div class="manual-phone">
+      <div class="manual-phone-frame"><img src="note-structured.png" alt="Structured H&P output"></div>
+      <div class="manual-phone-caption">Structured H&amp;P</div>
+    </div>
+  </div>
+
   <h3 class="subheading">Initials + chief complaint</h3>
   <ul class="body-list">
     <li><strong>Initials:</strong> 2-4 letters (JG, RC, AB). Used as the note's title. If you typo the initials, <strong>click the title on the note detail page to edit inline</strong> — no need to delete.</li>
@@ -466,6 +546,13 @@ footer a { color: var(--blue-bright); text-decoration:none; }
     <li><div class="step-num">3</div><div class="step-text">A banner prompts <strong>Restructure Full Note</strong>. Tap it — Claude merges the new info into the existing H&amp;P intelligently.</div></li>
   </ul>
 
+  <div class="manual-phones">
+    <div class="manual-phone">
+      <div class="manual-phone-frame"><img src="add-more-info.png" alt="Add more info flow"></div>
+      <div class="manual-phone-caption">Add more info</div>
+    </div>
+  </div>
+
   <h3 class="subheading">Generate Assessment &amp; Plan</h3>
   <p class="body-text">Once the H&amp;P is structured, the <strong>Generate A&amp;P</strong> button produces:</p>
   <ul class="body-list">
@@ -475,6 +562,21 @@ footer a { color: var(--blue-bright); text-decoration:none; }
     <li>Detailed plan organized by problem</li>
     <li>Guidelines referenced, ICD-10 codes, suggested CPT code</li>
   </ul>
+  <div class="manual-phones">
+    <div class="manual-phone">
+      <div class="manual-phone-frame"><img src="note-ap.png" alt="Assessment and Plan output"></div>
+      <div class="manual-phone-caption">A&amp;P + Differential</div>
+    </div>
+    <div class="manual-phone">
+      <div class="manual-phone-frame"><img src="note-codes.png" alt="ICD-10 and CPT codes"></div>
+      <div class="manual-phone-caption">ICD-10 &amp; CPT codes</div>
+    </div>
+    <div class="manual-phone">
+      <div class="manual-phone-frame"><img src="export-note.png" alt="Export note options"></div>
+      <div class="manual-phone-caption">Export &amp; share</div>
+    </div>
+  </div>
+
   <div class="callout info">
     <div class="callout-title">ℹ Clinical decision support only</div>
     <div class="callout-desc">
@@ -492,6 +594,21 @@ footer a { color: var(--blue-bright); text-decoration:none; }
     Switching between an ED workstation and a bedside phone? AdmitNote has two ways to move a note between
     your signed-in devices. <strong>Both are end-to-end encrypted — your notes never touch our servers in plaintext.</strong>
   </p>
+
+  <div class="manual-phones">
+    <div class="manual-phone">
+      <div class="manual-phone-frame"><img src="handoff-qr.png" alt="Handoff QR code shown on sender"></div>
+      <div class="manual-phone-caption">QR (camera available)</div>
+    </div>
+    <div class="manual-phone">
+      <div class="manual-phone-frame"><img src="handoff-code.png" alt="Handoff 6-digit code for no-camera receiver"></div>
+      <div class="manual-phone-caption">6-digit code (no camera)</div>
+    </div>
+    <div class="manual-phone">
+      <div class="manual-phone-frame"><img src="receive-menu.png" alt="Receive menu on the destination device"></div>
+      <div class="manual-phone-caption">Receive on 2nd device</div>
+    </div>
+  </div>
 
   <div class="two-col">
     <div class="card">
@@ -535,6 +652,13 @@ footer a { color: var(--blue-bright); text-decoration:none; }
     All saved notes appear on the main <strong>Notes</strong> tab, sorted by most recent activity first.
   </p>
 
+  <div class="manual-phones">
+    <div class="manual-phone">
+      <div class="manual-phone-frame"><img src="notes-list.png" alt="Notes list view"></div>
+      <div class="manual-phone-caption">Notes list — sorted newest first</div>
+    </div>
+  </div>
+
   <h3 class="subheading">48-hour HIPAA auto-delete</h3>
   <p class="body-text">
     Unlocked notes older than 48 hours are automatically removed. This is a hygiene feature — patient data
@@ -563,6 +687,13 @@ footer a { color: var(--blue-bright); text-decoration:none; }
     Access the calculator library via <strong>Clinical Scores</strong> in the top-right of the header.
     Scores are free for everyone — no Pro required.
   </p>
+
+  <div class="manual-phones">
+    <div class="manual-phone">
+      <div class="manual-phone-frame"><img src="clinical-scores.png" alt="Clinical scores library"></div>
+      <div class="manual-phone-caption">18 calculators, organ-system grouped</div>
+    </div>
+  </div>
   <p class="body-text">Currently available (organ-system grouped):</p>
   <ul class="body-list">
     <li><strong>Liver / GI:</strong> MELD-Na, Child-Pugh, Glasgow-Blatchford, Rockall</li>
@@ -633,6 +764,17 @@ footer a { color: var(--blue-bright); text-decoration:none; }
     Most AI scribes store your full patient transcripts on their servers. <strong>AdmitNote doesn't.</strong>
     The architecture below is built around that promise.
   </p>
+
+  <div class="manual-phones">
+    <div class="manual-phone">
+      <div class="manual-phone-frame"><img src="hipaa-notice.png" alt="HIPAA notice shown in-app"></div>
+      <div class="manual-phone-caption">HIPAA notice in-app</div>
+    </div>
+    <div class="manual-phone">
+      <div class="manual-phone-frame"><img src="onboarding-terms.png" alt="Onboarding terms acceptance"></div>
+      <div class="manual-phone-caption">Terms of use on first launch</div>
+    </div>
+  </div>
 
   <h3 class="subheading">Where notes live</h3>
   <ul class="body-list">
