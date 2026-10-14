@@ -624,6 +624,38 @@ footer {
   font-size:0.78rem; color: rgba(255,255,255,0.3);
 }
 
+
+/* ── HERO VIDEO ── */
+.hero-video-wrap {
+  margin-top: 56px;
+  animation: fadeUp 0.8s ease 0.5s both;
+}
+.hero-video-container {
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow:
+    0 0 60px rgba(37,99,235,0.15),
+    0 20px 60px rgba(0,0,0,0.4);
+}
+.hero-video-container video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+}
+.hero-video-label {
+  text-align: center;
+  margin-top: 14px;
+  font-size: 0.8rem;
+  color: var(--white-dim);
+  font-weight: 300;
+  letter-spacing: 0.02em;
+}
+
 /* ── SCROLL REVEAL ── */
 .reveal {
   opacity:0; transform:translateY(32px);
@@ -1191,6 +1223,16 @@ footer {
         <div class="stat-n"><span>0</span></div>
         <div class="stat-label">PHI Stored Externally</div>
       </div>
+    </div>
+
+    <div class="hero-video-wrap">
+      <div class="hero-video-container">
+        <video controls preload="metadata" poster="" playsinline>
+          <source src="AdmitNote_45s_v2.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <p class="hero-video-label">See AdmitNote in action — 45 seconds</p>
     </div>
   </div>
 </section>
